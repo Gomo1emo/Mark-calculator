@@ -20,28 +20,24 @@ let status;
 //let name3 = Lebo;
 
 const prompt = require("prompt-sync")();
-var studentName = prompt("student name: ");
-const mark1 = parseFloat(prompt("1st mark: "));
-const mark2 = parseFloat(prompt("2nd mark: "));
-const mark3 = parseFloat(prompt("3rd mark: "));
+for (i = 0; i < 3; i++) {
+  var studentName = prompt("student name: ");
+  const mark1 = parseFloat(prompt("1st mark: "));
+  const mark2 = parseFloat(prompt("2nd mark: "));
+  const mark3 = parseFloat(prompt("3rd mark: "));
 
-let total = mark1 + mark2 + mark3;
-let average = total/3;
-studentName.length = 5;
+  let total = mark1 + mark2 + mark3;
+  let average = total / 3;
 
+  if (average >= 50 && average <= 74) {
+    status = "passed!!";
+  } else if (average >= 75 && average <= 100) {
+    status = "Got A Distiction!!";
+  } else if (average < 50) {
+    status = "Failed!!";
+  } else if (average > 100) {
+    status = "Check your input";
+  }
+  console.log(`${studentName} ${status}`);
+}
 
-    for (i = 0; i < studentName.length; i++) {
-        if (average >= 50 && average <= 74){
-        status = 'passed!!';
-        }
-        else if (average >= 75 && average <= 100){
-            status = "Got A Distiction!!";
-        }
-        else if (average < 50) {
-            status = "Failed!!";
-        }
-        else if(average > 100) {
-            status = "Check your input";
-        };
-console.log(`${studentName} ${status}`);
-    }
